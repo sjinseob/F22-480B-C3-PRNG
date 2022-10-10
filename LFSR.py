@@ -11,19 +11,18 @@ key = ""
 
 temp = [0, 0, 0, 0, 0, 0]
 
-for _ in range(3):
+for _ in range(31):
     table.append(cur_vector)
-    for i in range(len(cur_vector)):
-        if(i == 0):
-            n = cur_vector[-2] + cur_vector[-1]
-            print(n)
-            temp[0] = int(math.fmod(n, 2))
-        elif(i == len(cur_vector)-1):
-            key += str(cur_vector[i])
-            break
+    # print("current vector: ",  cur_vector)
+    for i in range(len(cur_vector)-1):
         temp[i+1] = cur_vector[i]
-    temp = [0, 0, 0, 0, 0]
+        if i == 0:
+            temp[0] = int(math.fmod(cur_vector[-2] + cur_vector[-1], 2))
+        elif (i == len(cur_vector)-2):
+            key += str(cur_vector[-1])
+            break
     print(temp)
-    cur_vector = temp
+    cur_vector = temp.copy()
 
+print(key)
 print(table)
