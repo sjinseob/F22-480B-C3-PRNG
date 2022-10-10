@@ -13,7 +13,6 @@ temp = [0, 0, 0, 0, 0, 0]
 
 for _ in range(3):
     table.append(cur_vector)
-    print(table)
     for i in range(len(cur_vector)):
         if(i == 0):
             n = cur_vector[-2] + cur_vector[-1]
@@ -24,7 +23,7 @@ for _ in range(3):
             break
         temp[i+1] = cur_vector[i]
     temp = [0, 0, 0, 0, 0]
-    # print(temp)
+    print(temp)
     cur_vector = temp
 
 print(table)
